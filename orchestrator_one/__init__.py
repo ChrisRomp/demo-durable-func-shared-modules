@@ -19,6 +19,9 @@ def orchestrator_function(context: df.DurableOrchestrationContext):
     logger = Logger(context)
     logger.info("Starting orchestrator_one...")
 
+    # Get orchestration runtimeStatus
+    runtimeStatus = context.get
+
     # Get config - uses cached value when available
     config = Config().load()
     logging.info(f"Current config: {config}")
